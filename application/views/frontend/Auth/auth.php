@@ -24,7 +24,7 @@
                 <div class="row align-items-center">
                     <h1>Selamat datang</h1>
                     <div class="col-md-8">
-                        <form action="<?= base_url('Auth/login') ?>" method="POST">
+                        <form action="<?= base_url('Auth') ?>" method="POST">
                             <div class="form-group">
                                 <label for="email_user">Email</label>
                                 <input type="text" name="email_user" class="form-control" id="email_user">

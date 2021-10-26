@@ -1,54 +1,60 @@
-<footer class="footer">
-    <div class=" container-fluid ">
-        <nav>
-            <ul>
-                <li>
-                    <a href="https://www.creative-tim.com">
-                        Creative Tim
-                    </a>
-                </li>
-                <li>
-                    <a href="http://presentation.creative-tim.com">
-                        About Us
-                    </a>
-                </li>
-                <li>
-                    <a href="http://blog.creative-tim.com">
-                        Blog
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="copyright" id="copyright">
-            &copy; <script>
-                document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-            </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+<!-- Footer -->
+<footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2021</span>
         </div>
     </div>
 </footer>
-</div>
-</div>
-<!--   Core JS Files   -->
-<script src="<?= base_url('assets/backend') ?>/assets/js/core/jquery.min.js"></script>
-<script src="<?= base_url('assets/backend') ?>/assets/js/core/popper.min.js"></script>
-<script src="<?= base_url('assets/backend') ?>/assets/js/core/bootstrap.min.js"></script>
-<script src="<?= base_url('assets/backend') ?>/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-<!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-<!-- Chart JS -->
-<script src="<?= base_url('assets/backend') ?>/assets/js/plugins/chartjs.min.js"></script>
-<!--  Notifications Plugin    -->
-<script src="<?= base_url('assets/backend') ?>/assets/js/plugins/bootstrap-notify.js"></script>
-<!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-<script src="<?= base_url('assets/backend') ?>/assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
-<script src="<?= base_url('assets/backend') ?>/assets/demo/demo.js"></script>
-<script>
-    $(document).ready(function() {
-        // Javascript method's body can be found in assets/js/demos.js
-        demo.initDashboardPageCharts();
+<!-- End of Footer -->
 
-    });
-</script>
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript-->
+<script src="<?= base_url('assets/backend/') ?>vendor/jquery/jquery.min.js"></script>
+<script src="<?= base_url('assets/backend/') ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="<?= base_url('assets/backend/') ?>vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="<?= base_url('assets/backend/') ?>js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="<?= base_url('assets/backend/') ?>vendor/chart.js/Chart.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="<?= base_url('assets/backend/') ?>js/demo/chart-area-demo.js"></script>
+<script src="<?= base_url('assets/backend/') ?>sjs/demo/chart-pie-demo.js"></script>
+
 </body>
 
 </html>

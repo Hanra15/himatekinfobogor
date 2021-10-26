@@ -5,6 +5,7 @@ class Auth extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
+        $this->load->model('Auth_Model');
     }
 
     public function index()
@@ -14,15 +15,47 @@ class Auth extends CI_Controller
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('frontend/auth/auth');
+        }else{
+            $this->login();
         }
     }
 
-    public function login()
+    private function login()
     {
-
-
-
         $email = $this->input->post('email_user');
         $password = $this->input->post('password_user');
+
+        $user = $this->Auth_Model->userEmail($email);
+
+        
+        
+        if($user){
+            if(md5($password)==$user['password_user']){
+                $data = [
+                    'email_user' => $user['email_user'],
+                    'id_role' => $user['id_role'],
+                    'id_user' => $user['id_user']
+                ];
+                $this->session->set_userdata($data);
+                if ($user['id_role'] == 2) {
+                    redirect('dashboard');
+                }else{
+                    echo 'hehe';
+                }
+            }else{
+                $this->session->set_flashdata('flashdata', 'Password salah');
+                redirect('Auth');
+            }
+        }else{
+            $this->session->set_flashdata('flashdata', 'Email belum terdaftar');
+            redirect('Auth');
+        }
+    }
+
+    public function logout()
+    {
+        session_destroy();
+        $this->session->set_flashdata('flashdata', 'Logout berhasil');
+        redirect('auth');
     }
 }

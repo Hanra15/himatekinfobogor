@@ -1,65 +1,42 @@
-    <div class="sidebar" data-color="orange">
-        <!--
-        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
-    -->
-        <div class="logo">
-            <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-                CT
-            </a>
-            <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-                Creative Tim
-            </a>
-        </div>
-        <div class="sidebar-wrapper" id="sidebar-wrapper">
-            <ul class="nav">
-                <li class="active ">
-                    <a href="./dashboard.html">
-                        <i class="now-ui-icons design_app"></i>
-                        <p>Dashboard</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="./icons.html">
-                        <i class="now-ui-icons education_atom"></i>
-                        <p>Icons</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="./map.html">
-                        <i class="now-ui-icons location_map-big"></i>
-                        <p>Maps</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="./notifications.html">
-                        <i class="now-ui-icons ui-1_bell-53"></i>
-                        <p>Notifications</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="./user.html">
-                        <i class="now-ui-icons users_single-02"></i>
-                        <p>User Profile</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="./tables.html">
-                        <i class="now-ui-icons design_bullet-list-67"></i>
-                        <p>Table List</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="./typography.html">
-                        <i class="now-ui-icons text_caps-small"></i>
-                        <p>Typography</p>
-                    </a>
-                </li>
-                <li class="active-pro">
-                    <a href="./upgrade.html">
-                        <i class="now-ui-icons arrows-1_cloud-download-93"></i>
-                        <p>Upgrade to PRO</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+ <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+     <!-- Sidebar - Brand -->
+     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+         <div class="sidebar-brand-icon rotate-n-15">
+             <i class="fas fa-laugh-wink"></i>
+         </div>
+         <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+     </a>
+
+     <!-- Divider -->
+     <hr class="sidebar-divider my-0">
+
+     <?php
+
+        $this->db->select('*');
+        $this->db->from('tbl_menu');
+        $this->db->join('tbl_access_menu', 'tbl_menu.id_menu=tbl_access_menu.id_menu');
+        $this->db->where('tbl_access_menu.id_role', $this->session->userdata('id_role'));
+        $menu = $this->db->get()->result_array();
+
+        ?>
+     <!-- Nav Item - Dashboard -->
+     <?php foreach ($menu as $mn) : ?>
+         <li class="nav-item">
+             <a class="nav-link" href="<?= base_url() ?><?= $mn['link_menu'] ?>">
+                 <i class="<?= $mn['icon_menu'] ?>"></i>
+                 <span><?= $mn['nama_menu'] ?></span></a>
+         </li>
+     <?php endforeach; ?>
+
+     <!-- Divider -->
+     <hr class="sidebar-divider">
+
+     <li class="nav-item">
+         <a class="nav-link" href="<?= base_url() ?>auth/logout">
+             <i class="fas fa-fw fa-sign-out-alt"></i>
+             <span>Logout</span></a>
+     </li>
+
+ </ul>
+ <!-- End of Sidebar -->
