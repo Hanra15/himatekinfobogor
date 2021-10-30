@@ -1,0 +1,43 @@
+.jumbotron {
+    background-color: none;
+}
+
+.program_kerja {
+    padding: 15px;
+}
+
+
+.carousel-item{
+	height: 32rem;
+    background-color:cadetblue;
+    color: white;
+    position: relative;
+}
+
+.overlay-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.9;
+}
+
+.containercarousel {
+    position: static;
+
+}
+
+.profil {
+    background-color: rgb(247, 247, 247);
+}
+
+.blue {
+    color: rgb(0, 81, 255);
+}
+
+.purple {
+    color: purple;
+}
