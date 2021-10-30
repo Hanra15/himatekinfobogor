@@ -14,7 +14,9 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('password_user', 'Password User', 'trim|required');
 
         if ($this->form_validation->run() == FALSE) {
+            $this->load->view('frontend/templates/header');
             $this->load->view('frontend/auth/auth');
+            $this->load->view('frontend/templates/footer');
         }else{
             $this->login();
         }
@@ -40,7 +42,7 @@ class Auth extends CI_Controller
                 if ($user['id_role'] == 2) {
                     redirect('dashboard');
                 }else{
-                    echo 'hehe';
+                    redirect('dashboard');
                 }
             }else{
                 $this->session->set_flashdata('flashdata', 'Password salah');

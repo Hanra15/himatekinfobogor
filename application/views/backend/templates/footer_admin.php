@@ -55,6 +55,9 @@
 <script src="<?= base_url('assets/backend/') ?>js/demo/chart-area-demo.js"></script>
 <script src="<?= base_url('assets/backend/') ?>sjs/demo/chart-pie-demo.js"></script>
 
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.js"></script>
+
+
 </body>
 
 </html>
