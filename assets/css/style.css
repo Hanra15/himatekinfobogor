@@ -30,8 +30,12 @@
 
 }
 
+.post {
+    background-color: rgb(157, 157, 255);
+}
+
 .profil {
-    background-color: rgb(247, 247, 247);
+    background-color: #CEE5D0;
 }
 
 .blue {
