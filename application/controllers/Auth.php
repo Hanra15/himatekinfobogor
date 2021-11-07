@@ -9,12 +9,15 @@ class Auth extends CI_Controller
     }
 
     public function index()
+
     {
         $this->form_validation->set_rules('email_user', 'Email User', 'trim|valid_email|required');
         $this->form_validation->set_rules('password_user', 'Password User', 'trim|required');
 
+        $data['title'] = "HIMATEKINFO UIKA BOGOR - Auth";
+
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('frontend/templates/header');
+            $this->load->view('frontend/templates/header', $data);
             $this->load->view('frontend/auth/auth');
             $this->load->view('frontend/templates/footer');
         }else{

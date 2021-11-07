@@ -9,8 +9,9 @@ class Surat_Masuk extends CI_Controller{
 
     public function index(){
         $data['surat_masuk'] = $this->Surat_Masuk_Model->getSuratMasuk();
+        $data['title'] = "HIMATEKINFO UIKA BOGOR - Surat Masuk";
 
-        $this->load->view('backend/templates/header_admin');
+        $this->load->view('backend/templates/header_admin', $data);
         $this->load->view('backend/templates/sidebar_admin');
         $this->load->view('backend/templates/navbar_admin');
         $this->load->view('backend/surat_masuk/index', $data);

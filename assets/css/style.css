@@ -22,21 +22,16 @@
     top: 0;
     background-position: center;
     background-size: cover;
-    opacity: 0.9;
+    opacity: 100;
 }
-
+.ul li{
+    list-style: none !important;
+}
 .containercarousel {
     position: static;
 
 }
 
-.post {
-    background-color: rgb(157, 157, 255);
-}
-
-.profil {
-    background-color: #CEE5D0;
-}
 
 .blue {
     color: rgb(0, 81, 255);
