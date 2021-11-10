@@ -1,3 +1,4 @@
+
 <section>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -71,15 +72,15 @@
             <div class="row justify-content-center">
                 <div class="text-center">
                     <img src="<?= base_url() ?>assets/img/IMG-HEADLINE.jpg" width="150px" alt="">
-                    <h3 class="purple">GEBYAR IT 2021</h3>
+                    <h3 class="purple"><?= $cooming_soon['nama_kegiatan'] ?></h3>
                     <hr>
-                    <p class="text-center p-2">Gebyar IT merupakan rangakaian kegiatan edukatif yang diadakan oleh Himpunan Mahasiwa Teknik Infomatika (HIMATEKINFO) Fakultas Teknik dan Sains Universitas Ibn Khaldun Bogor sebagai sarana para mahasiswa untuk berkreasi dan berekspresi dalam keilmuan yang didalamnya terdapat beberapa rangkaian acara</p>
+                    <p class="text-center p-2"><?= $cooming_soon['deskripsi_kegiatan'] ?></p>
                 </div>
                 <div class="col-md-3 m-2">
                     <div class="card" style="height:10rem">
                         <div class="text-center">
                             <img src="<?= base_url() ?>assets/img/idea.jpg" class="rounded mb-2 mt-3" width="75px" alt="">
-                            <h6 class="blue">Education Technology and Competition</h6>
+                            <h6 class="blue"><?= $cooming_soon['tema_kegiatan'] ?></h6>
                         </div>
                     </div>
                 </div>
@@ -87,7 +88,7 @@
                     <div class="card" style="height:10rem">
                         <div class="text-center">
                             <img src="<?= base_url() ?>assets/img/map.png" class="rounded mb-2 mt-3" width="75px" alt="">
-                            <h6 class="blue">Fakultas Teknik dan Sains Universitas Ibn Khaldun Bogor</h6>
+                            <h6 class="blue"><?= $cooming_soon['tempat_kegiatan'] ?></h6>
                         </div>
                     </div>
                 </div>
@@ -95,14 +96,14 @@
                     <div class="card" style="height:10rem">
                         <div class="text-center">
                             <img src="<?= base_url() ?>assets/img/event.png" class="rounded mb-2 mt-3" width="75px" alt="">
-                            <h6 class="blue">9 s.d 14 Oktober 2021</h6>
+                            <h6 class="blue"><?= $cooming_soon['tanggal_kegiatan'] ?></h6>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="text-center mt-2">
-            <a href="#" class="btn" style="background-color: purple; color:white" type="button"><i class="fas fa-file-download"></i> Download Flayer</a>
+            <a href="<?= base_url() ?>assets/flayer/" class="btn" style="background-color: purple; color:white" download="<?= $cooming_soon['flayer'] ?>"><i class="fas fa-file-download"></i> Download Flayer</a>
         </div>
     </div>
 </section>
@@ -115,39 +116,22 @@
             </div>
         </div>
         <div class="row justify-content-center">
+            <?php foreach ($post as $ps) : ?>
             <div class="col-md-4 mb-2">
                 <div class="card h-100 d-flex flex-coloumn">
-                    <img src="<?= base_url() ?>assets/img/headline1.jpg" class="card-img-top" style="height: 200px;" alt="...">
+                    <img src="<?= base_url() ?>assets/post/<?= $ps['foto_post'] ?>" class="card-img-top" style="height: 200px;" alt="...">
                     <div class="card-body">
-                        <p class="card-text"><small class="text-muted m-0 p-0">Last updated 3 mins ago</small></p>
-                        <h5 class="card-title">MILAD HIMATEKINFO KE-19</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text"><small class="text-muted m-0 p-0"><?= $ps['tanggal_post'] ?></small></p>
+                        <h5 class="card-title"><?= $ps['judul_post'] ?></h5>
+                        <?php 
+                        $data['new_desk'] = substr($ps['deskripsi_post'], 0, 150).'......';
+                        ?>
+                        <p class="card-text"><?= $data['new_desk'] ?></p>
                     </div>
-                    <a href="#" class="btn mt-auto m-2" style="background-color: purple; color:white">Detail</a>
+                    <a href="<?= base_url() ?>post/detail/<?= $ps['id_post']?>" class="btn mt-auto m-2" style="background-color: purple; color:white">Detail</a>
                 </div>
             </div>
-            <div class="col-md-4 mb-2">
-                <div class="card h-100 d-flex flex-coloumn">
-                    <img src="<?= base_url() ?>assets/img/headline2.jpg" class="card-img-top" style="height: 200px;" alt="...">
-                    <div class="card-body">
-                        <p class="card-text"><small class="text-muted m-0 p-0">Last updated 3 mins ago</small></p>
-                        <h5 class="card-title">Penyerahan Bantuan Korban Bencana</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                    <a href="#" class="btn mt-auto m-2" style="background-color: purple; color:white">Detail<a>
-                </div>
-            </div>
-            <div class="col-md-4 mb-2">
-                <div class="card h-100 d-flex flex-coloumn">
-                    <img src="<?= base_url() ?>assets/img/headline6.jpg" class="card-img-top" style="height: 200px;" alt="...">
-                    <div class="card-body">
-                        <p class="card-text"><small class="text-muted m-0 p-0">Last updated 3 mins ago</small></p>
-                        <h5 class="card-title">Penggalangan dana korban bencana</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                    <a href="#" class="btn mt-auto m-2" style="background-color: purple; color:white">Detail</a>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
 
         <div class="row text-right">

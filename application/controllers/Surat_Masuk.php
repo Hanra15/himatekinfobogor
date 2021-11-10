@@ -29,6 +29,7 @@ class Surat_Masuk extends CI_Controller{
         ];
 
         $this->Surat_Masuk_Model->addSuratMasuk($data);
+        // $this->session->set_flashdata('flashdata', 'Data surat masuk berhasil ditambahkan !');
         redirect('Surat_Masuk');
     }
 
