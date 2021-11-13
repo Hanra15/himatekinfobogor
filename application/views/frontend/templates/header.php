@@ -40,7 +40,7 @@
                         <a class="nav-link" href="#" style="color: white;">Struktur Kepengurusan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: white;">Galeri</a>
+                        <a class="nav-link" href="<?= base_url() ?>f_galeri" style="color: white;">Galeri</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= base_url() ?>Auth" style="color: white;">Login</a>
