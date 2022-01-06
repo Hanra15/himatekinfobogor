@@ -34,7 +34,7 @@
                         <a class="nav-link" href="<?= base_url() ?>Home" style="color: white;">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="color: white;">Program Kerja</a>
+                        <a class="nav-link" href="#" style="color: black;">Program Kerja</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" style="color: white;">Struktur Kepengurusan</a>
